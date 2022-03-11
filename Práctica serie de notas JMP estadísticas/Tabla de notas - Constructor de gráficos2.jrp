@@ -1,0 +1,15 @@
+﻿New Table( "Tabla de notas",
+	Add Rows( 16 ),
+	New Column( "Notas",
+		Numeric,
+		"Continuous",
+		Format( "Best", 12 ),
+		Set Values( [3, 19, 10, 15, 14, 12, 9, 8, 11, 12, 11, 12, 13, 11, 14, 16] )
+	)
+) << Run Formulas;
+Graph Builder(
+	Size( 528, 456 ),
+	Show Control Panel( 0 ),
+	Variables( X( :Notas ), Y( :Notas ) ),
+	Elements( Line Of Fit( X, Y, Legend( 5 ) ), Points( X, Y, Legend( 6 ) ) )
+);
